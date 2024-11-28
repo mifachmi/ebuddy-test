@@ -6,9 +6,16 @@
 //
 
 import SwiftUI
+import Firebase
 
 @main
 struct EbuddyTestApp: App {
+    
+    init() {
+        FirebaseApp.configure()
+        print("Firebase Initialized")
+    }
+    
     var body: some Scene {
         WindowGroup {
             ContentView()
