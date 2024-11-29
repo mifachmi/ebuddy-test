@@ -10,6 +10,7 @@ import Firebase
 
 @main
 struct EbuddyTestApp: App {
+    @State private var currentEnvironment: AppEnvironment = .development
     
     init() {
         FirebaseApp.configure()
@@ -19,6 +20,7 @@ struct EbuddyTestApp: App {
     var body: some Scene {
         WindowGroup {
             ContentView()
+                .environmentObject(AppConfiguration(environment: currentEnvironment))
         }
     }
 }
