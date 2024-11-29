@@ -6,12 +6,21 @@
 //
 
 import SwiftUI
+import Firebase
 
 @main
 struct EbuddyTestApp: App {
+    @State private var currentEnvironment: AppEnvironment = .development
+    
+    init() {
+        FirebaseApp.configure()
+        print("Firebase Initialized")
+    }
+    
     var body: some Scene {
         WindowGroup {
             ContentView()
+                .environmentObject(AppConfiguration(environment: currentEnvironment))
         }
     }
 }
