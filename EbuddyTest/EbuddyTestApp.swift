@@ -21,6 +21,7 @@ struct EbuddyTestApp: App {
         WindowGroup {
             ContentView()
                 .environmentObject(AppConfiguration(environment: currentEnvironment))
+                .environmentObject(UserManager.shared)
         }
     }
 }

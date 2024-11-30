@@ -23,7 +23,7 @@ struct ContentView: View {
             let dataService: DataService = {
                 switch appConfig.environment {
                 case .development: return MockDataService()
-                case .staging: return MockDataService() // Use another mock if needed
+                case .staging: return MockDataService()
                 case .production: return APIDataService()
                 }
             }()
