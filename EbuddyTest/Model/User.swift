@@ -12,12 +12,15 @@ enum GenderEnum: Int, Codable {
     case male = 1
 }
 
-struct UserJSON: Codable {
+struct UserJSON: Codable, Hashable {
     var uid: String?
     var email: String?
     var phoneNumber: String?
     var gender: GenderEnum?
     var profileImageURL: String?
+    var rating: Double?
+    var servicePricing: Double?
+    var lastActive: Date?
     
     enum CodingKeys: String, CodingKey {
         case uid = "uid" // Map directly to Firestore field name
@@ -25,5 +28,8 @@ struct UserJSON: Codable {
         case phoneNumber = "phone_number" // Example of mapping legacy keys
         case gender = "gender"
         case profileImageURL = "profile_image_url"
+        case rating = "rating"
+        case servicePricing = "service_pricing"
+        case lastActive = "last_active"
     }
 }
